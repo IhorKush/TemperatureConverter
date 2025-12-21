@@ -10,12 +10,21 @@ public class Main {
         System.out.println("Temperature Converter app.");
 
         double fahrenheit = 90;
-        double celsius = fahrenheitToCelsius(fahrenheit);
+        double celsius = 60;
+
+        double convertToFahrenheit = celsiusToFahrenheit(celsius);
+        double convertToCelsius = fahrenheitToCelsius(fahrenheit);
 
         System.out.println(fahrenheit + " fahrenheit = " + celsius + " celsius.");
+        System.out.println(celsius + " celsius = " + fahrenheit + " fahrenheit.");
     }
 
     private static double fahrenheitToCelsius(double fahrenheit) {
         return (fahrenheit - FAHRENHEIT_TO_CELSIUS_OFFSET) * FAHRENHEIT_TO_CELSIUS_FACTOR;
     }
+
+    private static double celsiusToFahrenheit(double celsius) {
+        return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + CELSIUS_TO_FAHRENHEIT_OFFSET;
+    }
+
 }
